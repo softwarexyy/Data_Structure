@@ -2,20 +2,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZE 10
-    typedef int Type;
-    typedef struct stack
+typedef int Type;
+typedef struct stack
 {
     int top;
     int bottom;
     int count;  /* the count of the stack elements */
     Type content[SIZE];
 } Stack;
+
 void initstack(Stack *sdemo);
 void push(Stack *sdemo,Type data);
 Type pop(Stack *sdemo);
 int isempty(Stack *sdemo);
 int isfull(Stack *sdemo);
 void printmsg(Stack *sdemo); /* show the message of the current stack */
+
+/*******************    main    *************************/
 int main()
 {
     int i;
@@ -38,6 +41,9 @@ int main()
     free(stack);
     return 0;
 }
+
+
+/***************    implementation the stack ***************************/
 void initstack(Stack *sdemo)
 {
     int i;
